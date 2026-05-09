@@ -1,7 +1,8 @@
-<img width="269" height="265" alt="image" src="https://github.com/user-attachments/assets/1467a1a6-41f0-4d94-bf89-57ac2cd96e03" /># agent-学习路线记录
+# agent-学习路线记录
 -----------------------
 ## 2026.5.9
 今天观看了黑马程序员的课程
+<img width="269" height="265" alt="image" src="https://github.com/user-attachments/assets/1467a1a6-41f0-4d94-bf89-57ac2cd96e03" />
 看到了提示词工程
 然后这是大致的代码块：
 ```bash
