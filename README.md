@@ -35,3 +35,29 @@ for chunk in response:
         print(content, end="", flush=True)
 ```
 觉得今天看的课程比较重要的就是这段代码，流式输出，然后过滤none
+-------------------------------------------------------------
+## 2026.5.10
+```bash
+messages = [
+    {"role": "system",
+     "content": "你是金融专家，将文本分类为['新闻报道', '财务报道', '公司公告', '分析师报告']，不清楚的分类为'不清楚类别' 下面有示例："},
+]
+for key,value in examples_data.items():
+    messages.append({"role": "user","content": value})
+    messages.append({"role": "assistant","content": key})#动态添加message
+
+for q in questions:
+    response=client.chat.completions.create(
+        model="deepseek-v4-pro",
+        messages=messages+[{
+            "role":"user",
+            "content": q#把要问的问题添加进来
+        }]
+    )
+```
+这是今天学的动态创建提示词
+然后今天还学了list转json和json转list
+```bash
+json.dumbs(list,ensure_ascii=flase)#将字典或者列表转换成json
+json.loads(json)#将json转换成list或者字典
+```
