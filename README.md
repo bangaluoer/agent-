@@ -70,6 +70,6 @@ person = {
 }
 person["name"]=“张三”
 列表：类似于数组，通过下标来取对应的数据
-<img width="793"
 ```
-height="212" alt="image" src="https://github.com/user-attachments/assets/9035199a-11f7-41b9-910b-9c46f5c0e020" />
+<img width="833" height="209" alt="image" src="https://github.com/user-attachments/assets/4260c225-be4f-4618-8537-b1a8cb66fc53" />
+
