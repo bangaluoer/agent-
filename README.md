@@ -61,3 +61,13 @@ for q in questions:
 json.dumps(list,ensure_ascii=flase)#将字典或者列表转换成json
 json.loads(json)#将json转换成list或者字典
 ```
+之前Python的数据结构学的迷迷糊糊，再总结一下字典和列表取值的时候用的方法：
+```bash
+字典：键(key) -> 值(value)
+person = {
+    "name": "张三",
+    "age": 18
+}
+person["name"]=“张三”
+列表：类似于数组，通过下标来取对应的数据
+<img width="793" height="212" alt="image" src="https://github.com/user-attachments/assets/9035199a-11f7-41b9-910b-9c46f5c0e020" />
