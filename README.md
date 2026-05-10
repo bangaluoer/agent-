@@ -58,6 +58,6 @@ for q in questions:
 这是今天学的动态创建提示词
 然后今天还学了list转json和json转list
 ```bash
-json.dumbs(list,ensure_ascii=flase)#将字典或者列表转换成json
+json.dumps(list,ensure_ascii=flase)#将字典或者列表转换成json
 json.loads(json)#将json转换成list或者字典
 ```
