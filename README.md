@@ -123,3 +123,5 @@ llm = ChatOpenAI(
 res = llm.invoke(prompt_text).content
 print(res)
 ```
+还有今天学了format和invoke的区别：
+<img width="826" height="388" alt="image" src="https://github.com/user-attachments/assets/4469018a-7763-45d8-b4da-6eee040552e1" />
