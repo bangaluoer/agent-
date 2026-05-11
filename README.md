@@ -90,3 +90,36 @@ print(result1[:5])
 ```
 <img width="1231" height="448" alt="image" src="https://github.com/user-attachments/assets/2508d910-3c81-4b31-a1a7-b103a5628511" />
 
+今天还学了关于langchain里面的fewshot
+```bash
+from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
+from langchain_openai import ChatOpenAI
+
+example_prompt = PromptTemplate.from_template(
+    "输入:{input}, 输出:{output}"
+)
+
+examples = [
+    {"input": "示例1", "output": "答案1"},
+    {"input": "示例2", "output": "答案2"},
+]
+
+prompt = FewShotPromptTemplate(
+    examples=examples,
+    example_prompt=example_prompt,
+    prefix="下面是一些示例：",
+    suffix="请回答：{question}",
+    input_variables=["question"]
+)
+
+prompt_text = prompt.invoke({"question": "真正的问题"}).to_string()
+
+llm = ChatOpenAI(
+    model="deepseek-chat",
+    base_url="https://api.deepseek.com",
+    temperature=0
+)
+
+res = llm.invoke(prompt_text).content
+print(res)
+```
