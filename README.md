@@ -72,4 +72,19 @@ person["name"]=“张三”
 列表：类似于数组，通过下标来取对应的数据
 ```
 <img width="833" height="209" alt="image" src="https://github.com/user-attachments/assets/4260c225-be4f-4618-8537-b1a8cb66fc53" />
+-------------------------------------------------
+2026.5.11
+今天学习langchain，我自己的理解就是langchain集成了很多功能，可以直接调用
+还学了文字转向量，使用的是huggingface的embedding模型
+```bash
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
+embed = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-small-zh-v1.5"
+)
+
+result = embed.embed_query("我喜欢你")#embed_query单次转换，一次转换一句话
+result1=embed.embed_documents(["我喜欢你","我稀饭你","晚上吃什么"])#embed_documents一次转换多句话，传入的变量是一个列表[]
+print(result1[:5])
+```
 
