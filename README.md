@@ -73,6 +73,7 @@ person["name"]=“张三”
 ```
 <img width="833" height="209" alt="image" src="https://github.com/user-attachments/assets/4260c225-be4f-4618-8537-b1a8cb66fc53" />
 --------------------------------------------------------------------------------------------------------------------------------------
+
 ## 2026.5.11
 今天学习langchain，我自己的理解就是langchain集成了很多功能，可以直接调用
 还学了文字转向量，使用的是huggingface的embedding模型
