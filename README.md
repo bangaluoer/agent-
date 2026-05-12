@@ -122,6 +122,19 @@ llm = ChatOpenAI(
 
 res = llm.invoke(prompt_text).content
 print(res)
+# 1. 导入 LangChain 的提示词模板和 DeepSeek 模型
+
+# 2. 定义单个示例的格式
+
+# 3. 准备 few-shot 示例数据
+
+# 4. 定义 few-shot 总模板
+
+# 5. 把变量填进去，生成最终 prompt
+
+# 6. 调用 DeepSeek
+
+# 7. 输出结果
 ```
 还有今天学了format和invoke的区别：
 <img width="826" height="388" alt="image" src="https://github.com/user-attachments/assets/4469018a-7763-45d8-b4da-6eee040552e1" />
