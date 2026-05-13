@@ -138,3 +138,30 @@ print(res)
 ```
 还有今天学了format和invoke的区别：
 <img width="826" height="388" alt="image" src="https://github.com/user-attachments/assets/4469018a-7763-45d8-b4da-6eee040552e1" />
+## 2026.5.13
+今天学习了把模型的回复作为下一个模型的输入得到最后的结果
+```bash
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser,StrOutputParser
+from langchain_openai import ChatOpenAI
+from langchain_core.runnables import RunnableLambda
+first_prompt=PromptTemplate.from_template(
+    "我的邻居姓{last_name},生了一个{gender}，你给取个名字，只要名字，不要其他信息"
+)
+second_prompt=PromptTemplate.from_template(
+    "给你一个{name},解析一下含义"
+)
+str_parser=StrOutputParser()
+json_parser=JsonOutputParser()
+
+model=ChatOpenAI(
+    model="deepseek-chat",
+    base_url="https://api.deepseek.com",
+    temperature=0
+)
+func=RunnableLambda(lambda ai_msg :{"name":ai_msg.content} )
+chain=first_prompt|model|func|second_prompt|model|str_parser
+for chunk in chain.stream({"last_name":"张","gender":"女儿"}):
+    print(chunk,end="",flush=True)
+```
+或者也可以调用jsonparser 但是这样的话提示词就需要强制ai输出json格式 并且指名键和对应的数据
