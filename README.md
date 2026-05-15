@@ -165,3 +165,26 @@ for chunk in chain.stream({"last_name":"张","gender":"女儿"}):
     print(chunk,end="",flush=True)
 ```
 或者也可以调用jsonparser 但是这样的话提示词就需要强制ai输出json格式 并且指名键和对应的数据
+-----------------------------------------------------------------------------------------
+## 2026.5.15 
+今天学习了向量检索生成提示词 然后学习了将向量检索入chain
+```bash
+# 1. 用户问题
+input_text = "用户的问题"
+
+# 2. 检索资料
+docs = vector_store.similarity_search(input_text, k=2)
+
+# 3. 整理资料
+context = "\n".join([doc.page_content for doc in docs])
+
+# 4. 问模型
+chain = prompt | model | StrOutputParser()
+
+res = chain.invoke({
+    "input": input_text,
+    "context": context
+})
+
+print(res)
+```
